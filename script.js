@@ -18,6 +18,10 @@ function draw() {
     background(random(255),random(255),random(255));
     timer = millis();
   }
+  
+  let img = vid.get();
+  image(img, 0, 0); // redraws the video frame by frame in                           p5
+  
   // Create new p5 graphics object
  shape = createGraphics(100, 100);
   
@@ -40,8 +44,7 @@ function draw() {
  shape.curveVertex(32, 91);
  shape.endShape(CLOSE);
  
-  let img = vid.get();
-  // image(img, 400, 400); // redraws the video frame by frame in                           p5
+  
   //image(shape, 100, 0)
  
   // Use the shape as a mask

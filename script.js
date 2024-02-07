@@ -18,13 +18,37 @@ function draw() {
     background(random(255),random(255),random(255));
     timer = millis();
   }
-  let img = vid.get();
-  image(img, 400, 400); // redraws the video frame by frame in                           p5
-}
+  // Create new p5 graphics object
+ shape = createGraphics(100, 100);
+  
+  
+ // Draw the shape
+ shape.strokeWeight(5);
+ shape.point(84, 91);
+ shape.point(68, 19);
+ shape.point(21, 17);
+ shape.point(32, 91);
+ shape.strokeWeight(1);
 
-// function keyPressed() {
-//  vid.time(random(vid.duration())) 
-// }
+ shape.fill(0);
+ shape.beginShape();
+ shape.curveVertex(84, 91);
+ shape.curveVertex(84, 91);
+ shape.curveVertex(68, 19);
+ shape.curveVertex(21, 17);
+ shape.curveVertex(32, 91);
+ shape.curveVertex(32, 91);
+ shape.endShape(CLOSE);
+ 
+  let img = vid.get();
+  // image(img, 400, 400); // redraws the video frame by frame in                           p5
+  //image(shape, 100, 0)
+ 
+  // Use the shape as a mask
+  img.mask(shape)
+ 
+  image(img, 200, 0)
+}
 
 function mousePressed() {
  if (playing) {

@@ -1,3 +1,4 @@
+// CITATIONS: https://editor.p5js.org/black/sketches/sefca9mkE, https://editor.p5js.org/Jaesar/sketches/TGyEC6OYB
 let vid;
 let timer = 0;
 let playing = true;
